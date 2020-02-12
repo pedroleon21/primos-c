@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<ctype.h>
+#include<string.h>
 
 int eprimo(long long int p);
 void fileprint(long long int);
@@ -10,6 +11,7 @@ int main(){
 	long long int num,lmt;
 	char str[128];
 	arq = fopen("primarylist.txt","w");
+	str[0] = '\0';
 	if(arq==NULL) {return 0;}
 	else {printf("range: ");scanf("%lli",&lmt);}
 	printf("\ncalculando...\n");
