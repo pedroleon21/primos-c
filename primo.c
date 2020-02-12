@@ -7,14 +7,22 @@ void fileprint(long long int);
 
 int main(){
 	FILE *arq = NULL;
-	long long int num;
+	long long int num,lmt;
+	char str[128];
 	arq = fopen("primarylist.txt","w");
 	if(arq==NULL) {return 0;}
-	else {printf("calculando");}
+	else {printf("range: ");scanf("%lli",&lmt);}
+	printf("\ncalculando...\n");
 	fclose(arq);
-	for(num=2;num;num++){
+	for(num=2;num<lmt;num++){
 		if(eprimo(num)){fileprint(num);}
 	}printf("\nend\n");
+	arq = fopen("primarylist.txt","r");
+	while(fgets(str,128,arq) != NULL){
+		//c = getc(arq);
+		printf("%s",str);
+	}
+	fclose(arq);
 	return 0;
 }
 
